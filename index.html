@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Gifts in a Jar, DIY cleaning and pantry books, a holiday budget planner and debt payoff kits for owner-operators and gig workers, from George Williams of True Trucking TV.">
+<meta property="og:title" content="True Trucking TV Shop">
+<meta property="og:description" content="Homemade holiday gift books, DIY home books and debt payoff kits. Instant download.">
+<meta property="og:image" content="https://shop.truetruckingtv.com/img/jar.jpg">
+<meta name="theme-color" content="#1f2a37">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>True Trucking TV Shop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: an owner's shop. George's face and story up top, a trust strip, then three aisles of products, each with a "Look inside" preview, then contact. */
+:root{
+  --bg:#f6f5f1; --surface:#ffffff; --ink:#1d2430; --muted:#5a6270; --line:#e2e0d8;
+  --accent:#e0a21b; --accent-ink:#1d2430; --band:#1f2a37; --band-ink:#f4efe2; --band-muted:#c9c3b4;
+  --tag:#eef1e8; --tag-ink:#3c5a2e; --soft:#f0ede4;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14181e; --surface:#1c222b; --ink:#ecebe6; --muted:#a4abb6; --line:#2c3440;
+  --accent:#f0b43a; --accent-ink:#161a20; --band:#0f1318; --band-ink:#f4efe2; --band-muted:#b9b3a5;
+  --tag:#26301f; --tag-ink:#b9d6a3; --soft:#232a34; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181e; --surface:#1c222b; --ink:#ecebe6; --muted:#a4abb6; --line:#2c3440;
+  --accent:#f0b43a; --accent-ink:#161a20; --band:#0f1318; --band-ink:#f4efe2; --band-muted:#b9b3a5;
+  --tag:#26301f; --tag-ink:#b9d6a3; --soft:#232a34; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+header{background:var(--band);color:var(--band-ink)}
+.brandbar .wrap{padding-block:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid color-mix(in srgb,var(--band-ink) 14%,transparent)}
+.brand{font:800 18px/1 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.brand b{color:var(--accent)}
+.brandbar a.yt{font-size:14px;font-weight:500;text-decoration:none;border:1px solid color-mix(in srgb,var(--band-ink) 30%,transparent);border-radius:999px;padding:6px 12px}
+.brandbar a.yt:hover,.brandbar a.yt:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+.hero .wrap{padding-block:34px 38px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center}
+.hero img{width:150px;height:150px;border-radius:50%;display:block;border:3px solid var(--accent)}
+.hero h1{font:800 clamp(30px,5.4vw,50px)/1.04 var(--display);margin:0 0 12px;text-wrap:balance;letter-spacing:-.01em}
+.hero p{margin:0;max-width:64ch;color:var(--band-muted)}
+.hero p strong{color:var(--band-ink);font-weight:600}
+@media (max-width:620px){.hero .wrap{grid-template-columns:1fr;gap:18px}.hero img{width:108px;height:108px}}
+.trust{background:var(--soft);border-bottom:1px solid var(--line)}
+.trust .wrap{padding-block:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px;font-size:14px}
+.trust div{display:flex;gap:10px;align-items:flex-start}
+.trust svg{flex:none;margin-top:2px;color:var(--tag-ink)}
+.trust strong{display:block;font-weight:600}
+.trust span{color:var(--muted)}
+@media (max-width:720px){.trust .wrap{grid-template-columns:1fr}}
+nav.jump{display:flex;flex-wrap:wrap;gap:8px}
+nav.jump a{text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500}
+nav.jump a:hover,nav.jump a:focus-visible{border-color:var(--accent);outline:none}
+main .wrap{padding-block:26px 48px;display:grid;gap:44px}
+section{display:grid;gap:18px;scroll-margin-top:16px}
+.aisle-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+h2{font:700 clamp(22px,3.2vw,30px)/1.1 var(--display);margin:0}
+.aisle-head span{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.grid,.grid.two{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;height:100%}
+.card>img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--line)}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.tag{align-self:flex-start;background:var(--tag);color:var(--tag-ink);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px}
+h3{font:700 20px/1.2 var(--display);margin:0;text-wrap:balance}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:3px}
+.fmt{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+details{font-size:14px}
+summary{cursor:pointer;font-weight:600;color:var(--ink);list-style:none;display:inline-flex;align-items:center;gap:6px;padding:6px 0}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+details[open] summary::before{transform:rotate(45deg)}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.peek{display:grid;gap:8px;margin-top:6px}
+.peek img{width:100%;border-radius:6px;border:1px solid var(--line);display:block}
+.buy{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:6px}
+.price{font:800 24px/1 var(--display);font-variant-numeric:tabular-nums}
+.price s{font:500 14px var(--body);color:var(--muted);margin-left:6px}
+.btn{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:15px;padding:11px 18px;border-radius:8px;white-space:nowrap}
+.btn:hover{filter:brightness(1.06)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.feature{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.feature>img{aspect-ratio:auto;height:100%;min-height:280px}
+.feature .body{padding:22px 24px}
+.feature h3{font-size:26px}
+@media (max-width:900px){.feature{grid-column:1/-1}}
+@media (max-width:640px){.feature{grid-template-columns:1fr}.feature>img{aspect-ratio:1/1;min-height:0}}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 24px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px 32px}
+.contact h2{margin-bottom:8px}
+.contact p{margin:0 0 10px;color:var(--muted);max-width:60ch}
+.lines{display:grid;gap:10px;align-content:start}
+.line{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.line div{min-width:0}
+.line small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.line span{font-weight:600;user-select:all;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.copy{flex:none;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:6px 10px;font:500 13px var(--body);cursor:pointer}
+.copy:hover,.copy:focus-visible{border-color:var(--accent);outline:none}
+@media (max-width:720px){.contact{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="brandbar"><div class="wrap">
+    <div class="brand">True Trucking <b>TV</b> Shop</div>
+    <a class="yt" href="https://www.youtube.com/@truetruckingtv" target="_blank" rel="noopener">Watch the channel on YouTube</a>
+  </div></div>
+  <div class="hero"><div class="wrap">
+    <img src="img/george.jpg" alt="George Williams">
+    <div>
+      <h1>Know your numbers. Keep more of your money.</h1>
+      <p>I'm <strong>George Williams</strong>. I've spent 25 years in logistics as a driver, an owner-operator and, for 8+ years, running my own freight brokerage. I made these guides and spreadsheets the same way I ran a business: every recipe is priced out with real store-brand costs, and every tracker shows you exactly where your money goes.</p>
+    </div>
+  </div></div>
+</header>
+
+<div class="trust"><div class="wrap">
+  <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><p style="margin:0"><strong>Secure checkout by Gumroad</strong><span>Pay by card or PayPal. I never see your card details.</span></p></div>
+  <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v3h16v-3"/></svg><p style="margin:0"><strong>Instant download</strong><span>Your files arrive by email right after checkout.</span></p></div>
+  <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><p style="margin:0"><strong>A real person behind it</strong><span>Questions go straight to me. Contact info is at the bottom.</span></p></div>
+</div></div>
+
+<main>
+<div class="wrap">
+
+<nav class="jump" aria-label="Shop sections">
+  <a href="#holiday">Holiday</a>
+  <a href="#home">Home &amp; Kitchen</a>
+  <a href="#money">Money &amp; Debt</a>
+  <a href="#contact">Contact George</a>
+</nav>
+
+<section id="holiday" aria-labelledby="h-holiday">
+  <div class="aisle-head"><h2 id="h-holiday">Holiday</h2><span>Get through Christmas without the credit card bill</span></div>
+  <div class="grid">
+    <article class="card feature">
+      <img src="img/jar.jpg" alt="Gifts in a Jar book cover" loading="lazy">
+      <div class="body">
+        <span class="tag">New for 2026</span>
+        <h3>Gifts in a Jar</h3>
+        <p>16 homemade jar gifts for teachers, neighbors, coworkers and the gift swap. Most cost about $1 to $5 each to make.</p>
+        <ul>
+          <li>7 cookie and baking jars, 3 cocoa and drink jars, 2 soup jars, 4 seasoning sets</li>
+          <li>Exact layers for every jar and how long it keeps</li>
+          <li>Printable gift tags with the directions on them</li>
+        </ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/jar-1.jpg" alt="Sample recipe pages" loading="lazy"><img src="img/jar-2.jpg" alt="Printable gift tags" loading="lazy"></div></details>
+        <div class="fmt">PDF book + printable tags · 27 pages</div>
+        <div class="buy"><span class="price">$7.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/gifts-in-a-jar" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/holiday.jpg" alt="Holiday Budget and Gift Planner" loading="lazy">
+      <div class="body">
+        <span class="tag">Spreadsheet</span>
+        <h3>Holiday Budget &amp; Gift Planner</h3>
+        <p>Enter your budget and when you get paid. It tells you how much to save from each paycheck so the holidays are paid in cash.</p>
+        <ul><li>Gift list, spending log and dashboard</li></ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/holiday-1.jpg" alt="Save-each-payday calculator" loading="lazy"><img src="img/holiday-2.jpg" alt="Gift list sheet" loading="lazy"></div></details>
+        <div class="fmt">Excel + Google Sheets</div>
+        <div class="buy"><span class="price">$7.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/holiday-budget-planner" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="home" aria-labelledby="h-home">
+  <div class="aisle-head"><h2 id="h-home">Home &amp; Kitchen</h2><span>Make the name-brand stuff yourself for pennies</span></div>
+  <div class="grid">
+    <article class="card">
+      <img src="img/bundle.jpg" alt="The Dupe Cleaning Book and The Dupe Pantry bundle" loading="lazy">
+      <div class="body">
+        <span class="tag">Best value</span>
+        <h3>The Dupe Bundle</h3>
+        <p>Both Dupe books together: 63 recipes and every printable, for less than buying them separately.</p>
+        <ul><li>The Dupe Cleaning Book</li><li>The Dupe Pantry</li></ul>
+        <div class="fmt">2 PDF books + all printables</div>
+        <div class="buy"><span class="price">$14.99<s>$17.98</s></span><a class="btn" href="https://gwillow5.gumroad.com/l/dupe-bundle" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/cleaning.jpg" alt="The Dupe Cleaning Book cover" loading="lazy">
+      <div class="body">
+        <span class="tag">Book + printables</span>
+        <h3>The Dupe Cleaning Book</h3>
+        <p>38 homemade cleaners that work like the name brands. A $3.48 bottle of glass cleaner costs about 51 cents to make.</p>
+        <ul><li>Safety rules: what never to mix</li><li>Bottle labels and a savings calculator</li></ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/cleaning-1.jpg" alt="Recipe pages" loading="lazy"><img src="img/cleaning-2.jpg" alt="Printable bottle labels" loading="lazy"></div></details>
+        <div class="fmt">PDF book + labels + spreadsheet</div>
+        <div class="buy"><span class="price">$9.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/dupe-cleaning-book" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/pantry.jpg" alt="The Dupe Pantry cover" loading="lazy">
+      <div class="body">
+        <span class="tag">Book + printables</span>
+        <h3>The Dupe Pantry</h3>
+        <p>25 copycat seasoning packets and mixes. A $2.33 ranch packet costs about 42 cents from spices in your cabinet.</p>
+        <ul><li>Taco, chili, onion soup, gravy, hot cocoa and more</li><li>Jar labels and a shopping list</li></ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/pantry-1.jpg" alt="Taco seasoning recipe and savings cheat sheet" loading="lazy"><img src="img/pantry-2.jpg" alt="Printable jar labels" loading="lazy"></div></details>
+        <div class="fmt">PDF book + labels + shopping list</div>
+        <div class="buy"><span class="price">$7.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/dupe-pantry" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="money" aria-labelledby="h-money">
+  <div class="aisle-head"><h2 id="h-money">Money &amp; Debt</h2><span>Budgets built for pay that changes every week</span></div>
+  <div class="grid two">
+    <article class="card">
+      <img src="img/owner-operator.jpg" alt="Owner-Operator Debt Escape Kit" loading="lazy">
+      <div class="body">
+        <span class="tag">For owner-operators</span>
+        <h3>Owner-Operator Debt Escape Kit</h3>
+        <p>A cash flow and debt payoff tracker that works with weekly settlements.</p>
+        <ul><li>Your real cost per mile, after fuel, maintenance and taxes</li><li>What to set aside each week for taxes and repairs</li><li>Your debt-free date</li></ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/owner-operator-1.jpg" alt="Cost per mile load log and dashboard" loading="lazy"><img src="img/owner-operator-2.jpg" alt="Debt payoff plan" loading="lazy"></div></details>
+        <div class="fmt">Excel + Google Sheets tracker · 6-page guide · creditor letter templates</div>
+        <div class="buy"><span class="price">$12.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/owner-operator-debt-kit" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="img/irregular.jpg" alt="Irregular Income Debt Escape Kit" loading="lazy">
+      <div class="body">
+        <span class="tag">For gig workers &amp; freelancers</span>
+        <h3>Irregular Income Debt Escape Kit</h3>
+        <p>Splits every payday in the same order: bills, taxes, car fund, slow-week buffer, then debt.</p>
+        <ul><li>Your true hourly pay after gas and fees</li><li>A month-by-month payoff plan</li></ul>
+        <details><summary>Look inside</summary><div class="peek"><img src="img/irregular-1.jpg" alt="Payday split order" loading="lazy"><img src="img/irregular-2.jpg" alt="Debt payoff plan" loading="lazy"></div></details>
+        <div class="fmt">Excel + Google Sheets tracker · creditor letter templates</div>
+        <div class="buy"><span class="price">$12.99</span><a class="btn" href="https://gwillow5.gumroad.com/l/irregular-income-debt-kit" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="contact" aria-labelledby="h-contact">
+  <div>
+    <h2 id="h-contact">Questions? Ask me directly.</h2>
+    <p>If a file won't open, you're not sure which kit fits you, or you want to know what's inside before you buy, reach out. You'll hear back from me, not a call center.</p>
+    <p>Spreadsheets open in Excel or the free Google Sheets. Books are PDFs that read on any phone, tablet or computer.</p>
+  </div>
+  <div class="lines">
+    <div class="line"><div><small>Email</small><span id="em">gwilliams2995@gmail.com</span></div><button class="copy" type="button" data-copy="em">Copy</button></div>
+    <div class="line"><div><small>Phone / text</small><span id="ph">321-395-9957</span></div><button class="copy" type="button" data-copy="ph">Copy</button></div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 George Williams · 1 Five Star LLC · Apopka, Florida</span>
+    <span>Checkout and delivery by Gumroad</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.copy);const t=el.textContent;
+  const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1600)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+  try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+}));
+</script>
+
+</body>
+</html>
