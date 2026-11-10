@@ -160,6 +160,22 @@ summary:focus-visible{outline:2px solid var(--line-yellow);outline-offset:2px;bo
 .gearaisle .glink{color:var(--line-yellow)}
 .gear:hover,.gear:focus-visible{border-color:var(--line-yellow);outline:none}
 @media (prefers-reduced-motion:no-preference){.gear{transition:transform .15s ease,border-color .15s ease}.gear:hover{transform:translateY(-3px)}}
+.gpgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:1000px){.gpgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.gpgrid{grid-template-columns:1fr}}
+.gearpic{display:flex;flex-direction:column;text-decoration:none;background:var(--asphalt-2);color:var(--white);border:1px solid #333b45;border-radius:12px;overflow:hidden;min-width:0}
+.gearpic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gp-body{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
+.gearpic strong{font:800 20px/1.1 var(--display);font-stretch:85%}
+.gearpic .gnote{color:#c9ced6}
+.gearpic:hover,.gearpic:focus-visible{border-color:var(--line-yellow);outline:none}
+@media (prefers-reduced-motion:no-preference){.gearpic{transition:transform .15s ease,border-color .15s ease}.gearpic:hover{transform:translateY(-3px)}}
+.allgear{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none;background:var(--line-yellow);color:var(--asphalt);border-radius:14px;padding:18px 22px}
+.allgear strong{display:block;font:900 26px/1 var(--display);font-stretch:75%;text-transform:uppercase}
+.allgear em{display:block;font-style:normal;font-size:14px;font-weight:600;margin-top:6px}
+.allgear .arrow{font:900 34px/1 var(--display)}
+.allgear:hover{background:#ffc94d}
+.allgear:focus-visible{outline:3px solid var(--white);outline-offset:3px}
 h3.sub{font:800 22px/1.1 var(--display);font-stretch:85%;margin:26px 0 12px;text-transform:uppercase;letter-spacing:.02em}
 h3.sub:first-of-type{margin-top:0}
 .disclose{font-size:12px;opacity:.75;margin:22px 0 0}
@@ -362,59 +378,30 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap">
     <div class="aisle-head">
       <div><div class="num">Aisle 4</div><h2 class="disp" id="h-gear">Driver Gear</h2></div>
-      <p>What I'd hand a new driver before the first week out.</p>
+      <p>Top picks from my full gear list for drivers.</p>
     </div>
-    <div class="ggrid">
-      <a class="gear" href="https://www.amazon.com/dp/B0001MQ7A4?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Cab cooking</span>
-        <strong>12V Lunch Box Stove</strong>
-        <em>Koolatron 12V heating lunch box</em>
-        <span class="gnote">Heats a home-cooked meal off the 12V plug while you drive. Skip the truck stop grill.</span>
-        <span class="glink">See it on Amazon →</span>
+    <div class="gpgrid">
+      <a class="gearpic" href="https://www.amazon.com/dp/B0F8BQW4TR?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <img src="img/gear-dash-cam.jpg" alt="Vantrue N4 Pro 3-Channel Dash Cam" loading="lazy">
+        <span class="gp-body"><span class="gtag">George's Pick</span><strong>Vantrue N4 Pro 3-Channel Dash Cam</strong><span class="gnote">Front, cab and rear on camera. When it's your word against a four-wheeler, footage wins.</span><span class="glink">See it on Amazon →</span></span>
       </a>
-      <a class="gear" href="https://www.amazon.com/s?k=EUHOMY+23QT+12+Volt+Refrigerator&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Cab cooking</span>
-        <strong>12V Compressor Fridge</strong>
-        <em>EUHOMY 23-quart, no ice needed</em>
-        <span class="gnote">A week of groceries in the sleeper instead of truck stop prices.</span>
-        <span class="glink">See it on Amazon →</span>
+      <a class="gearpic" href="https://www.amazon.com/dp/B0BVGTZCLB?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <img src="img/gear-cb-radio.jpg" alt="Cobra 29 LTD CB Radio" loading="lazy">
+        <span class="gp-body"><span class="gtag">Navigation & Comms</span><strong>Cobra 29 LTD CB Radio</strong><span class="gnote">Still the fastest way to hear about the wreck two miles ahead.</span><span class="glink">See it on Amazon →</span></span>
       </a>
-      <a class="gear" href="https://www.amazon.com/dp/B000COMXI6?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Pre-trip</span>
-        <strong>Dual-Head Tire Gauge</strong>
-        <em>Milton S-986, 10–160 PSI</em>
-        <span class="gnote">Reaches the inside dual. Built for semi, trailer and RV tires.</span>
-        <span class="glink">See it on Amazon →</span>
+      <a class="gearpic" href="https://www.amazon.com/s?k=roadpro+12v+lunchbox+stove&tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <img src="img/gear-lunchbox-stove.jpg" alt="RoadPro 12V Lunchbox Stove" loading="lazy">
+        <span class="gp-body"><span class="gtag">Food & Power</span><strong>RoadPro 12V Lunchbox Stove</strong><span class="gnote">Hot meal off the lighter socket. Saves money and your waistline.</span><span class="glink">See it on Amazon →</span></span>
       </a>
-      <a class="gear" href="https://www.amazon.com/dp/B07WP393CS?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Pre-trip</span>
-        <strong>Rechargeable Headlamp</strong>
-        <em>Lepro LED, 5 modes</em>
-        <span class="gnote">Hands-free light for night pre-trips, coupling and checking tires.</span>
-        <span class="glink">See it on Amazon →</span>
-      </a>
-      <a class="gear" href="https://www.amazon.com/dp/B0C2Y6WXJ7?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Protection</span>
-        <strong>3-Camera Dash Cam</strong>
-        <em>Front, rear and inside, 1296P</em>
-        <span class="gnote">Video is your best witness when a four-wheeler cuts you off.</span>
-        <span class="glink">See it on Amazon →</span>
-      </a>
-      <a class="gear" href="https://www.amazon.com/dp/B0BVGTZCLB?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">On the road</span>
-        <strong>CB Radio</strong>
-        <em>Cobra 29 LTD Classic</em>
-        <span class="gnote">Channel 19 still tells you about the wreck before your GPS does.</span>
-        <span class="glink">See it on Amazon →</span>
-      </a>
-      <a class="gear" href="https://www.amazon.com/dp/B07XCB39XN?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
-        <span class="gtag">Cab life</span>
-        <strong>Front-Seat Organizer</strong>
-        <em>ECWKVN file and tablet organizer</em>
-        <span class="gnote">Logbook, bills of lading, tablet and receipts in one place.</span>
-        <span class="glink">See it on Amazon →</span>
+      <a class="gearpic" href="https://www.amazon.com/s?k=12v+portable+fridge+freezer+truck&tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <img src="img/gear-portable-fridge.jpg" alt="12V Portable Fridge Freezer" loading="lazy">
+        <span class="gp-body"><span class="gtag">Food & Power</span><strong>12V Portable Fridge Freezer</strong><span class="gnote">Keep real food cold all week instead of living on the truck stop roller grill.</span><span class="glink">See it on Amazon →</span></span>
       </a>
     </div>
+    <a class="allgear" href="https://truetruckingtv.com/gear" target="_blank" rel="noopener">
+      <span><strong>See all 20+ driver gear picks</strong><em>Dash cams, GPS, sleeper comfort, tools and more, with reviews, at truetruckingtv.com/gear</em></span>
+      <span class="arrow">→</span>
+    </a>
     <p class="disclose">As an Amazon Associate I earn from qualifying purchases. Prices and availability are on Amazon and can change.</p>
   </div>
 </section>
