@@ -139,6 +139,31 @@ summary:focus-visible{outline:2px solid var(--line-yellow);outline-offset:2px;bo
 @media (max-width:960px){.feature{grid-column:1/-1}}
 @media (max-width:680px){.feature{grid-template-columns:1fr}.feature>img{aspect-ratio:1/1;min-height:0}}
 
+
+/* ---------- AFFILIATE AISLES ---------- */
+.gearaisle{background:var(--asphalt);color:var(--white)}
+.supplies{background:var(--cream)}
+.ggrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:1000px){.ggrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.ggrid{grid-template-columns:1fr}}
+.gear{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--white);color:var(--ink);border-radius:12px;padding:16px 16px 14px;border:1px solid var(--rule);min-width:0}
+.gearaisle .gear{background:var(--asphalt-2);color:var(--white);border-color:#333b45}
+.gear strong{font:800 20px/1.1 var(--display);font-stretch:85%}
+.gear em{font-style:normal;font-size:13px;font-weight:600;color:var(--muted)}
+.gearaisle .gear em{color:#9aa2ad}
+.gnote{font-size:14px;line-height:1.45;color:var(--muted);flex:1}
+.gearaisle .gnote{color:#c9ced6}
+.gtag{align-self:flex-start;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.gearaisle .gtag{color:var(--line-yellow)}
+.glink{font-weight:700;font-size:14px;color:var(--navy);margin-top:4px}
+.gearaisle .glink{color:var(--line-yellow)}
+.gear:hover,.gear:focus-visible{border-color:var(--line-yellow);outline:none}
+@media (prefers-reduced-motion:no-preference){.gear{transition:transform .15s ease,border-color .15s ease}.gear:hover{transform:translateY(-3px)}}
+h3.sub{font:800 22px/1.1 var(--display);font-stretch:85%;margin:26px 0 12px;text-transform:uppercase;letter-spacing:.02em}
+h3.sub:first-of-type{margin-top:0}
+.disclose{font-size:12px;opacity:.75;margin:22px 0 0}
+
 /* ---------- GEORGE ---------- */
 .george{padding-block:70px;background:var(--paper)}
 .g-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
@@ -181,7 +206,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="topbar">
       <a class="logo" href="#top" id="top"><span class="mark">TT</span><span>True Trucking <b>TV</b> Shop</span></a>
       <nav class="topnav" aria-label="Shop sections">
-        <a href="#holiday">Holiday</a><a href="#home">Home &amp; Kitchen</a><a href="#money">Money Kits</a><a href="#george">About George</a>
+        <a href="#holiday">Holiday</a><a href="#home">Home &amp; Kitchen</a><a href="#money">Money Kits</a><a href="#gear">Driver Gear</a><a href="#supplies">Supplies</a><a href="#george">About George</a>
       </nav>
     </div>
     <div class="hero-grid">
@@ -332,6 +357,171 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </section>
 
+
+<section class="aisle gearaisle" id="gear" aria-labelledby="h-gear">
+  <div class="wrap">
+    <div class="aisle-head">
+      <div><div class="num">Aisle 4</div><h2 class="disp" id="h-gear">Driver Gear</h2></div>
+      <p>What I'd hand a new driver before the first week out.</p>
+    </div>
+    <div class="ggrid">
+      <a class="gear" href="https://www.amazon.com/dp/B0001MQ7A4?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Cab cooking</span>
+        <strong>12V Lunch Box Stove</strong>
+        <em>Koolatron 12V heating lunch box</em>
+        <span class="gnote">Heats a home-cooked meal off the 12V plug while you drive. Skip the truck stop grill.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=EUHOMY+23QT+12+Volt+Refrigerator&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Cab cooking</span>
+        <strong>12V Compressor Fridge</strong>
+        <em>EUHOMY 23-quart, no ice needed</em>
+        <span class="gnote">A week of groceries in the sleeper instead of truck stop prices.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B000COMXI6?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Pre-trip</span>
+        <strong>Dual-Head Tire Gauge</strong>
+        <em>Milton S-986, 10–160 PSI</em>
+        <span class="gnote">Reaches the inside dual. Built for semi, trailer and RV tires.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B07WP393CS?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Pre-trip</span>
+        <strong>Rechargeable Headlamp</strong>
+        <em>Lepro LED, 5 modes</em>
+        <span class="gnote">Hands-free light for night pre-trips, coupling and checking tires.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B0C2Y6WXJ7?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Protection</span>
+        <strong>3-Camera Dash Cam</strong>
+        <em>Front, rear and inside, 1296P</em>
+        <span class="gnote">Video is your best witness when a four-wheeler cuts you off.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B0BVGTZCLB?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">On the road</span>
+        <strong>CB Radio</strong>
+        <em>Cobra 29 LTD Classic</em>
+        <span class="gnote">Channel 19 still tells you about the wreck before your GPS does.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B07XCB39XN?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Cab life</span>
+        <strong>Front-Seat Organizer</strong>
+        <em>ECWKVN file and tablet organizer</em>
+        <span class="gnote">Logbook, bills of lading, tablet and receipts in one place.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+    </div>
+    <p class="disclose">As an Amazon Associate I earn from qualifying purchases. Prices and availability are on Amazon and can change.</p>
+  </div>
+</section>
+
+<section class="aisle supplies" id="supplies" aria-labelledby="h-supplies">
+  <div class="wrap">
+    <div class="aisle-head">
+      <div><div class="num">Aisle 5</div><h2 class="disp" id="h-supplies">Home Supplies</h2></div>
+      <p>The jars, bottles and basics the books call for.</p>
+    </div>
+    <h3 class="sub">Gifts in a Jar supplies</h3>
+    <div class="ggrid">
+      <a class="gear" href="https://www.amazon.com/dp/B0H5QSB3M8?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Quart Mason Jars, 12-pack</strong>
+                <span class="gnote">32 oz wide mouth for the cookie, brownie and cocoa layers.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B08KZXB22R?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Pint Mason Jars, 15-pack</strong>
+                <span class="gnote">16 oz jars for the soup mixes and seasoning sets.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B01767EKXC?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Kraft Gift Tags, 100</strong>
+                <span class="gnote">Tie the baking directions onto every jar.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B01MYUWR9S?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Red & White Bakers Twine</strong>
+                <span class="gnote">The classic holiday finish on every lid.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B0HCBZLLWD?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Christmas Jar Lids, 60</strong>
+                <span class="gnote">Holiday-print lids for regular-mouth jars.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/dp/B087QBM11J?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Wide-Mouth Canning Funnel</strong>
+                <span class="gnote">Keeps the flour and sugar layers clean.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+    </div>
+    <h3 class="sub">Cleaning book supplies</h3>
+    <div class="ggrid">
+      <a class="gear" href="https://www.amazon.com/dp/B07MGKCV5Y?tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Distilled White Vinegar, 1 gal</strong>
+                <span class="gnote">The base of most sprays in the book.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=Bontip+amber+glass+spray+bottle+16+oz+2+pack&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Glass Spray Bottles</strong>
+                <span class="gnote">Amber glass holds up to vinegar and essential oils.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=Arm+%26+Hammer+Super+Washing+Soda+55+oz&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Super Washing Soda</strong>
+                <span class="gnote">For the degreaser and dishwasher detergent recipes.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=Dr.+Bronner%27s+Baby+Unscented+Pure-Castile+Liquid+Soap+32+oz&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Unscented Castile Soap</strong>
+                <span class="gnote">Used in several recipes. A little goes a long way.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=Amazon+Basics+microfiber+cleaning+cloths+24+pack&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Microfiber Cloths</strong>
+                <span class="gnote">Washable cloths that replace paper towels.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+    </div>
+    <h3 class="sub">Pantry book supplies</h3>
+    <div class="ggrid">
+      <a class="gear" href="https://www.amazon.com/s?k=glass+spice+jars+with+shaker+lids+and+labels&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Glass Spice Jars with Shaker Lids</strong>
+                <span class="gnote">For storing your homemade taco, ranch and chili mixes.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=chalkboard+labels+for+spice+jars&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Chalkboard Jar Labels</strong>
+                <span class="gnote">Or print the labels that come with the book.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+      <a class="gear" href="https://www.amazon.com/s?k=stainless+steel+measuring+spoons+set&amp;tag=brandstruesho-20" target="_blank" rel="noopener sponsored">
+        <span class="gtag">Amazon</span>
+        <strong>Measuring Spoon Set</strong>
+                <span class="gnote">Exact spoons matter when you make a big batch.</span>
+        <span class="glink">See it on Amazon →</span>
+      </a>
+    </div>
+    <p class="disclose">As an Amazon Associate I earn from qualifying purchases.</p>
+  </div>
+</section>
+
 <section class="george" id="george" aria-labelledby="h-george">
   <div class="wrap g-grid">
     <div class="g-photo"><img src="img/george.jpg" alt="George Williams"><span class="plate">George Williams</span></div>
@@ -369,7 +559,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <footer>
   <div class="wrap">
     <span>© 2026 George Williams · 1 Five Star LLC · Apopka, Florida</span>
-    <span>Secure checkout and instant delivery by Gumroad</span>
+    <span>Secure checkout and instant delivery by Gumroad · As an Amazon Associate I earn from qualifying purchases.</span>
   </div>
 </footer>
 
