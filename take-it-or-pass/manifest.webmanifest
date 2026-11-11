@@ -1,6 +1,6 @@
 {
-  "name": "Load Check by True Trucking TV",
-  "short_name": "Load Check",
+  "name": "Take It or Pass by True Trucking TV",
+  "short_name": "Take It or Pass",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
