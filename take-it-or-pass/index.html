@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Take It or Pass: Free Load Calculator</title>
-<meta name="description" content="Take It or Pass: free 15-second load calculator for truck drivers and owner-operators. Enter the rate, loaded miles and deadhead and see your real rate per mile, your profit and the rate to counter with.">
+<meta name="description" content="Take It or Pass: free 15-second load calculator for truck drivers and owner-operators. Enter the rate, loaded miles, deadhead and diesel price and see your real rate per mile, your profit and the rate to counter with.">
 <meta property="og:title" content="Take It or Pass: Free Load Calculator">
-<meta property="og:description" content="Free 15-second load calculator. Real rate per mile with deadhead, profit on the load, and the rate to counter with.">
+<meta property="og:description" content="Free 15-second load calculator. Real rate per mile with deadhead, fuel cost at today's diesel price, profit on the load, and the rate to counter with.">
 <meta property="og:image" content="https://shop.truetruckingtv.com/take-it-or-pass/og.png">
 <meta name="theme-color" content="#171b21">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,6 +61,8 @@ label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-tra
 .num em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:2px}
 .num.hi{border-color:var(--yellow)}
 .num.hi b{color:var(--yellow)}
+.num.wide{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.num.wide b{font-size:30px;white-space:nowrap;margin-top:0}
 .row{display:flex;gap:10px;margin-top:12px}
 .btn{flex:1;height:50px;border-radius:10px;border:2px solid var(--line);background:none;color:var(--ink);font:700 15px var(--body);cursor:pointer}
 .btn:hover,.btn:focus-visible{border-color:var(--yellow);outline:none}
@@ -92,7 +94,7 @@ footer a{color:var(--muted)}
   </header>
 
   <h1 class="disp">Take It <em>or Pass</em></h1>
-  <p class="sub">Three numbers, about 15 seconds. Deadhead included, because the broker won't count it for you.</p>
+  <p class="sub">About 15 seconds. Deadhead and today's diesel price included, because the broker won't count them for you.</p>
 
   <div class="card">
     <div class="fields">
@@ -108,17 +110,22 @@ footer a{color:var(--muted)}
         <label for="dead">Deadhead miles</label>
         <div class="inp"><input id="dead" inputmode="decimal" autocomplete="off" placeholder="90"></div>
       </div>
-      <div class="full">
-        <label for="extra">Extra costs, optional</label>
+      <div>
+        <label for="diesel">Diesel $/gal</label>
+        <div class="inp"><span>$</span><input id="diesel" inputmode="decimal" autocomplete="off" placeholder="4.00"></div>
+        <div class="hint">What you're paying now. Remembered.</div>
+      </div>
+      <div>
+        <label for="extra">Extra costs</label>
         <div class="inp"><span>$</span><input id="extra" inputmode="decimal" autocomplete="off" placeholder="0"></div>
-        <div class="hint">Tolls, lumper, scale tickets you pay and won't get back.</div>
+        <div class="hint">Tolls, lumper, scales. Optional.</div>
       </div>
     </div>
   </div>
 
   <div class="verdict wait" id="verdict" role="status" aria-live="polite">
     <div class="word" id="vword">Enter a load</div>
-    <div class="why" id="vwhy">Using your cost of <span id="cpmShow">$1.85</span>/mi and a target of <span id="tgtShow">$0.50</span>/mi profit.</div>
+    <div class="why" id="vwhy"></div>
   </div>
 
   <div class="nums">
@@ -126,6 +133,7 @@ footer a{color:var(--muted)}
     <div class="num hi"><small>Real rate/mi</small><b id="rpmAll">–</b><em>with deadhead</em></div>
     <div class="num"><small>Profit on load</small><b id="profit">–</b><em id="profitMi">after your costs</em></div>
     <div class="num hi"><small>Counter at least</small><b id="counter">–</b><em>to hit your target</em></div>
+    <div class="num wide"><div><small>Fuel for this load</small><em id="fuelWhy">at your MPG and diesel price</em></div><b id="fuel">–</b></div>
   </div>
 
   <div class="row">
@@ -143,10 +151,11 @@ footer a{color:var(--muted)}
     <summary>How the math works</summary>
     <ul>
       <li>Total miles = loaded + deadhead.</li>
-      <li>Trip cost = your cost per mile × total miles + extra costs.</li>
+      <li>Fuel per mile = diesel price ÷ your MPG. Fuel for the load = total miles ÷ MPG × diesel price.</li>
+      <li>Trip cost = (your non-fuel cost per mile + fuel per mile) × total miles + extra costs.</li>
       <li>Profit = rate − trip cost.</li>
       <li><b>Take it</b> when profit per total mile meets your target. <b>Counter</b> when you'd make money but less than your target. <b>Pass</b> when the load loses money.</li>
-      <li>Counter at least = (cost per mile + target) × total miles + extras, rounded up to the next $25.</li>
+      <li>Counter at least = (non-fuel cost + fuel per mile + target) × total miles + extras, rounded up to the next $25.</li>
       <li>Your numbers stay on this phone. Nothing is sent anywhere.</li>
     </ul>
   </details>
@@ -160,9 +169,14 @@ footer a{color:var(--muted)}
     <p>Set these once at home. They're saved on this phone and used for every load.</p>
     <div class="setfields">
       <div>
-        <label for="cpm">All-in cost per mile</label>
-        <div class="inp"><span>$</span><input id="cpm" inputmode="decimal" autocomplete="off" placeholder="1.85"></div>
-        <div class="hint">Fuel, truck and trailer payments, insurance, maintenance, permits, and the pay you need to take home.</div>
+        <label for="cpm">Cost per mile, not counting fuel</label>
+        <div class="inp"><span>$</span><input id="cpm" inputmode="decimal" autocomplete="off" placeholder="1.15"></div>
+        <div class="hint">Truck and trailer payments, insurance, maintenance, tires, permits, and the pay you need to take home. Fuel is figured separately from your MPG and the diesel price.</div>
+      </div>
+      <div>
+        <label for="mpg">Your truck's MPG</label>
+        <div class="inp"><input id="mpg" inputmode="decimal" autocomplete="off" placeholder="6.5"></div>
+        <div class="hint">Loaded average. Most tractors run 5.5 to 7.5.</div>
       </div>
       <div>
         <label for="tgt">Profit you want per mile</label>
@@ -179,37 +193,41 @@ footer a{color:var(--muted)}
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)};
-  var st={cpm:1.85,tgt:0.50,set:false};
-  try{var s=JSON.parse(localStorage.getItem('lc-numbers')||'null');if(s&&s.cpm>0){st.cpm=+s.cpm;st.tgt=+s.tgt||0;st.set=true}}catch(e){}
+  var st={cpm:1.15,mpg:6.5,tgt:0.50,set:false};
+  try{var s=JSON.parse(localStorage.getItem('tip-numbers')||'null');if(s&&s.cpm>0&&s.mpg>0){st.cpm=+s.cpm;st.mpg=+s.mpg;st.tgt=+s.tgt||0;st.set=true}}catch(e){}
+  try{var dz=localStorage.getItem('tip-diesel');if(dz)document.getElementById('diesel').value=dz}catch(e){}
   function num(v){v=String(v||'').replace(/[^0-9.]/g,'');var n=parseFloat(v);return isFinite(n)?n:0}
   function money(n,d){var neg=n<0;n=Math.abs(n);var s='$'+n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});return neg?'−'+s:s}
   function fmtInput(el){var raw=el.value.replace(/[^0-9.]/g,'');var parts=raw.split('.');var whole=parts[0]?Number(parts[0]).toLocaleString('en-US'):'';el.value=parts.length>1?whole+'.'+parts.slice(1).join('').slice(0,2):whole}
   var counterVal=0;
   function calc(){
-    var rate=num($('rate').value),L=num($('loaded').value),D=num($('dead').value),X=num($('extra').value);
-    var T=L+D,v=$('verdict');
-    if(!(rate>0&&L>0)){v.className='verdict wait';$('vword').textContent='Enter a load';$('vwhy').innerHTML='Using your cost of '+money(st.cpm,2)+'/mi and a target of '+money(st.tgt,2)+'/mi profit.'+(st.set?'':' <u>Tap "My numbers" to set yours.</u>');['rpmLoaded','rpmAll','profit','counter'].forEach(function(k){$(k).textContent='–'});$('profitMi').textContent='after your costs';counterVal=0;return}
-    var cost=st.cpm*T+X,profit=rate-cost,ppm=profit/T;
-    counterVal=Math.ceil(((st.cpm+st.tgt)*T+X)/25)*25;
+    var rate=num($('rate').value),L=num($('loaded').value),D=num($('dead').value),X=num($('extra').value),P=num($('diesel').value);
+    var T=L+D,v=$('verdict'),fpm=P>0?P/st.mpg:0;
+    $('fuelWhy').textContent=P>0?(T>0?Math.round(T/st.mpg)+' gal · ':'')+money(fpm,2)+'/mi at '+st.mpg+' MPG':'Enter your diesel price above';
+    $('fuel').textContent=P>0&&T>0?money(T/st.mpg*P,0):'–';
+    if(!(rate>0&&L>0&&P>0)){v.className='verdict wait';$('vword').textContent=P>0?'Enter a load':'Enter diesel price';$('vwhy').innerHTML='Using '+money(st.cpm,2)+'/mi before fuel, '+st.mpg+' MPG, and a target of '+money(st.tgt,2)+'/mi profit.'+(st.set?'':' <u>Tap "My numbers" to set yours.</u>');['rpmLoaded','rpmAll','profit','counter'].forEach(function(k){$(k).textContent='–'});$('profitMi').textContent='after your costs';counterVal=0;return}
+    var cpm=st.cpm+fpm,cost=cpm*T+X,profit=rate-cost,ppm=profit/T;
+    counterVal=Math.ceil(((cpm+st.tgt)*T+X)/25)*25;
     $('rpmLoaded').textContent=money(rate/L,2);$('rpmAll').textContent=money(rate/T,2);
     $('profit').textContent=money(profit,0);$('profitMi').textContent=money(ppm,2)+' per total mile';
     $('counter').textContent=counterVal<=rate?'Not needed':money(counterVal,0);
     var dh=D>0?Math.round(D/T*100)+'% of your miles are deadhead. ':'';
-    if(profit<0){v.className='verdict pass';$('vword').textContent='Pass';$('vwhy').textContent=dh+'This load costs you '+money(-profit,0)+'. Counter at '+money(counterVal,0)+' or let it go.'}
+    if(profit<0){v.className='verdict pass';$('vword').textContent='Pass';$('vwhy').textContent=dh+'After fuel, this load costs you '+money(-profit,0)+'. Counter at '+money(counterVal,0)+' or let it go.'}
     else if(ppm<st.tgt){v.className='verdict counter';$('vword').textContent='Counter';$('vwhy').textContent=dh+'You clear '+money(profit,0)+', under your target. Ask for '+money(counterVal,0)+'.'}
-    else{v.className='verdict go';$('vword').textContent='Take it';$('vwhy').textContent=dh+'You clear '+money(profit,0)+' after costs, '+money(ppm,2)+' per mile.'}
+    else{v.className='verdict go';$('vword').textContent='Take it';$('vwhy').textContent=dh+'You clear '+money(profit,0)+' after fuel and costs, '+money(ppm,2)+' per mile.'}
   }
-  ['rate','loaded','dead','extra'].forEach(function(id){var el=$(id);el.addEventListener('input',function(){fmtInput(el);calc()})});
+  ['rate','loaded','dead','extra','diesel'].forEach(function(id){var el=$(id);el.addEventListener('input',function(){fmtInput(el);calc()})});
+  $('diesel').addEventListener('change',function(){try{localStorage.setItem('tip-diesel',$('diesel').value)}catch(e){}});
   $('clear').addEventListener('click',function(){['rate','loaded','dead','extra'].forEach(function(id){$(id).value=''});calc();$('rate').focus()});
   $('copy').addEventListener('click',function(){var b=this;if(!counterVal){b.textContent='Enter a load first';setTimeout(function(){b.textContent='Copy counter'},1500);return}
     var t=String(counterVal);var done=function(){b.textContent='Copied $'+counterVal.toLocaleString('en-US');setTimeout(function(){b.textContent='Copy counter'},1800)};
     try{navigator.clipboard.writeText(t).then(done,function(){b.textContent='$'+counterVal.toLocaleString('en-US')})}catch(e){b.textContent='$'+counterVal.toLocaleString('en-US')}});
   var dlg=$('setDlg');
-  $('openSet').addEventListener('click',function(){$('cpm').value=st.cpm.toFixed(2);$('tgt').value=st.tgt.toFixed(2);if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','')});
-  $('setForm').addEventListener('submit',function(e){var c=num($('cpm').value),g=num($('tgt').value);if(c>0){st.cpm=c;st.tgt=g;st.set=true;try{localStorage.setItem('lc-numbers',JSON.stringify({cpm:c,tgt:g}))}catch(err){}}calc();if(!dlg.showModal){e.preventDefault();dlg.removeAttribute('open')}});
+  $('openSet').addEventListener('click',function(){$('cpm').value=st.cpm.toFixed(2);$('mpg').value=st.mpg;$('tgt').value=st.tgt.toFixed(2);if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','')});
+  $('setForm').addEventListener('submit',function(e){var c=num($('cpm').value),m=num($('mpg').value),g=num($('tgt').value);if(c>0&&m>0){st.cpm=c;st.mpg=m;st.tgt=g;st.set=true;try{localStorage.setItem('tip-numbers',JSON.stringify({cpm:c,mpg:m,tgt:g}))}catch(err){}}calc();if(!dlg.showModal){e.preventDefault();dlg.removeAttribute('open')}});
   var standalone=window.matchMedia&&matchMedia('(display-mode: standalone)').matches||navigator.standalone;
   if(!standalone&&/iPhone|iPad|Android/i.test(navigator.userAgent))$('install').style.display='block';
-  if(!st.set&&dlg.showModal){setTimeout(function(){$('cpm').value='';$('tgt').value='';dlg.showModal()},400)}
+  if(!st.set&&dlg.showModal){setTimeout(function(){$('cpm').value='';$('mpg').value='';$('tgt').value='';dlg.showModal()},400)}
   calc();
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
